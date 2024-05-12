@@ -1,10 +1,20 @@
-import React from 'react'
-import "./index.css"
+import React, { useEffect, useState } from "react";
+import "./index.css";
 
 const Effect = () => {
-  return (
-    <div>Effect</div>
-  )
-}
+  const [count, setCount] = useState(0);
 
-export default Effect
+  useEffect(() => {
+    console.log("Effect triggered!");
+  }, []);
+
+  return (
+    <div>
+      <h2>Effect Component</h2>
+      <p>Count: {count}</p>
+      <button onClick={() => setCount(count + 1)}>Increment Count</button>
+    </div>
+  );
+};
+
+export default Effect;
