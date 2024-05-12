@@ -5,8 +5,11 @@ const Reference = () => {
   const renderCount = useRef(0);
   const inputRef = useRef();
 
+  
+
   useEffect(() => {
     renderCount.current = renderCount.current + 1;
+    
   });
 
   const handleFocus = () => {
@@ -23,7 +26,7 @@ const Reference = () => {
         onChange={(e) => setName(e.target.value)}
       />
       <div>my Name is {name}</div>
-      <div>Irendered {renderCount.current}</div>
+      <div>I rendered {renderCount.current}</div>
       <button onClick={handleFocus}>focus</button>
     </div>
   );

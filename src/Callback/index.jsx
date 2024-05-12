@@ -1,4 +1,4 @@
-import React, { useCallback, useState } from "react";
+import React, { useCallback, useMemo, useState } from "react";
 import List from "./List";
 import "./index.css";
 
@@ -6,9 +6,13 @@ const Callback = () => {
   const [number, setNumber] = useState(1);
   const [dark, setDark] = useState(false);
 
-  const getItems = () => {
-    return [number, number + 1];
-  };
+  const getItems = useCallback((inc) => {
+    return [number+inc, number + 1+inc, number + 2+inc];
+  }, [number]);
+
+  // const getItems = useMemo(() => {
+  //   return [number, number + 1, number + 2];
+  // },[number]);
 
   const theme = {
     backgroundColor: dark ? "#444" : "#fff",

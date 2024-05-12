@@ -5,14 +5,13 @@ const Effect = () => {
   const [count, setCount] = useState(0);
 
   useEffect(() => {
-    console.log("Effect triggered!");
-  }, []);
+    document.title = `You clicked ${count} times`;
+  });
 
   return (
     <div>
-      <h2>Effect Component</h2>
-      <p>Count: {count}</p>
-      <button onClick={() => setCount(count + 1)}>Increment Count</button>
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>Click me to increment</button>
     </div>
   );
 };

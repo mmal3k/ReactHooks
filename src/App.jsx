@@ -19,9 +19,8 @@ const App = () => {
         <Route path="/memo" element={<Memo/>} />
         <Route path="/context" element={<Context/>} />
         <Route path="/callback" element={<Callback/>} />
-        <Route path="/reference" element={<Reference/>} />
+        <Route path="/ref" element={<Reference/>} />
         <Route path="/layouteffect" element={<LayoutEffect/>} />
-       
       </Routes>
     </BrowserRouter>
   );

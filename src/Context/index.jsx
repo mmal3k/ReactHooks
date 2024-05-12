@@ -1,10 +1,14 @@
-import React from 'react'
-import "./index.css"
+import React, { createContext } from "react";
+import "./index.css";
+
+const UserContext = createContext();
+
+
 
 const Context = () => {
-  return (
-    <div>Context</div>
-  )
-}
+  const user = { name: "Karim", age: 20 };
+  return <UserContext.Provider value={user}>{children}</UserContext.Provider>;
+};
 
-export default Context
+export default Context;
+
