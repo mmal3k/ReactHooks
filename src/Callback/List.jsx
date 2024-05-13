@@ -4,7 +4,7 @@ const List = ({ getItems }) => {
   const [items, setItems] = useState([]);
 
   useEffect(()=>{
-    setItems(getItems())
+    setItems(getItems)
     console.log("updating items");
   },[getItems])
 
