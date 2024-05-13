@@ -6,13 +6,11 @@ const Callback = () => {
   const [number, setNumber] = useState(1);
   const [dark, setDark] = useState(false);
 
-  const getItems = useCallback((inc) => {
-    return [number+inc, number + 1+inc, number + 2+inc];
-  }, [number]);
+  
 
-  // const getItems = useMemo(() => {
-  //   return [number, number + 1, number + 2];
-  // },[number]);
+  const getItems = (() => {
+    return [number, number + 1, number + 2];
+  },[number]);
 
   const theme = {
     backgroundColor: dark ? "#444" : "#fff",
